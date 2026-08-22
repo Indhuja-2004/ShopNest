@@ -1,299 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0">
-
-    <meta name="description"
-        content="Your shopping cart - ShopNest">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Your shopping cart - ShopNest">
     <title>Shopping Cart - ShopNest</title>
-
     <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
 
     <!-- Header -->
     <header>
-
         <nav>
-
-            <a href="index.html" class="logo">
-                ShopNest
-            </a>
-
+            <a href="index.html" class="logo">ShopNest</a>
             <ul class="nav-links">
-
-                <li>
-                    <a href="index.html">Home</a>
-                </li>
-
-                <li>
-                    <a href="products.html">Shop</a>
-                </li>
-
-                <li>
-                    <a href="products.html">Categories</a>
-                </li>
-
-                <li>
-                    <a href="products.html">Deals</a>
-                </li>
-
-                <li>
-                    <a href="contact.html">Contact</a>
-                </li>
-
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Shop</a></li>
+                <li><a href="calculator.html">Calculator</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
-
             <div class="nav-actions">
-
-                <a href="login.html">
-                    Login
-                </a>
-
-                <a href="signup.html" class="signup-btn">
-                    Sign Up
-                </a>
-
-                <a href="cart.html" aria-label="Shopping Cart">
-                    🛒
-                </a>
-
+                <a href="login.html">Login</a>
+                <a href="signup.html" class="signup-btn">Sign Up</a>
+                <a href="cart.html" aria-label="Shopping Cart">🛒</a>
             </div>
-
         </nav>
-
     </header>
-
 
     <!-- Cart Main Section -->
     <main>
-
         <section class="cart-section">
-
             <div class="section-heading">
-
-                <p>
-                    YOUR SHOPPING CART
-                </p>
-
-                <h1>
-                    Shopping Cart
-                </h1>
-
+                <p>YOUR SHOPPING CART</p>
+                <h1>Shopping Cart</h1>
             </div>
 
-
             <div class="cart-layout">
-
-
-                <!-- Cart Items -->
-
-                <div class="cart-items">
-
-
-                    <!-- Cart Item 1 -->
-
-                    <article class="cart-item">
-
-                        <img
-                            src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=300&q=80"
-                            alt="Running Shoes">
-
-                        <div class="cart-item-info">
-
-                            <p class="product-category">
-                                Footwear
-                            </p>
-
-                            <h3>
-                                Running Shoes
-                            </h3>
-
-                            <p class="cart-price">
-                                ₹1,599
-                            </p>
-
-                            <label for="quantity1">
-                                Quantity
-                            </label>
-
-                            <input
-                                type="number"
-                                id="quantity1"
-                                name="quantity1"
-                                value="1"
-                                min="1"
-                                max="10">
-
-                        </div>
-
-                        <button
-                            type="button"
-                            class="remove-btn">
-
-                            Remove
-
-                        </button>
-
-                    </article>
-
-
-                    <!-- Cart Item 2 -->
-
-                    <article class="cart-item">
-
-                        <img
-                            src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=300&q=80"
-                            alt="Smart Watch">
-
-                        <div class="cart-item-info">
-
-                            <p class="product-category">
-                                Electronics
-                            </p>
-
-                            <h3>
-                                Smart Watch
-                            </h3>
-
-                            <p class="cart-price">
-                                ₹2,499
-                            </p>
-
-                            <label for="quantity2">
-                                Quantity
-                            </label>
-
-                            <input
-                                type="number"
-                                id="quantity2"
-                                name="quantity2"
-                                value="1"
-                                min="1"
-                                max="10">
-
-                        </div>
-
-                        <button
-                            type="button"
-                            class="remove-btn">
-
-                            Remove
-
-                        </button>
-
-                    </article>
-
-
-                    <!-- Continue Shopping -->
-
-                    <a href="products.html"
-                        class="continue-shopping">
-
-                        ← Continue Shopping
-
+                
+                <!-- Dynamic Cart Items Container -->
+                <div class="cart-items" id="cart-items-container">
+                    <!-- Items will be injected here by cart.js -->
+                    
+                    <a href="products.html" class="continue-shopping">
+                        &larr; Continue Shopping
                     </a>
-
                 </div>
 
-
                 <!-- Order Summary -->
-
                 <aside class="order-summary">
-
-                    <h2>
-                        Order Summary
-                    </h2>
-
+                    <h2>Order Summary</h2>
 
                     <div class="summary-row">
-
-                        <span>
-                            Subtotal
-                        </span>
-
-                        <strong>
-                            ₹4,098
-                        </strong>
-
+                        <span>Subtotal</span>
+                        <strong id="summary-subtotal">₹0.00</strong>
                     </div>
-
 
                     <div class="summary-row">
-
-                        <span>
-                            Delivery
-                        </span>
-
-                        <strong>
-                            ₹99
-                        </strong>
-
+                        <span>Delivery</span>
+                        <strong id="summary-delivery">₹0.00</strong>
                     </div>
-
+                    
+                    <div class="summary-row">
+                        <span>Tax (18%)</span>
+                        <strong id="summary-tax">₹0.00</strong>
+                    </div>
 
                     <div class="summary-row">
-
-                        <span>
-                            Discount
-                        </span>
-
-                        <strong class="discount">
-                            -₹200
-                        </strong>
-
+                        <span>Discount</span>
+                        <strong class="discount" id="summary-discount">-₹0.00</strong>
                     </div>
-
 
                     <hr>
 
-
                     <div class="summary-total">
-
-                        <span>
-                            Total
-                        </span>
-
-                        <strong>
-                            ₹3,997
-                        </strong>
-
+                        <span>Total</span>
+                        <strong id="summary-total">₹0.00</strong>
                     </div>
 
-
-                    <a href="#"
-                        class="checkout-btn">
-
+                    <a href="checkout.html" class="checkout-btn">
                         Proceed to Checkout
-
                     </a>
-
                 </aside>
-
             </div>
-
         </section>
-
     </main>
 
-
     <!-- Footer -->
-
     <footer>
-
-        <p>
-            &copy; 2026 ShopNest.
-            All Rights Reserved.
-        </p>
-
+        <p>&copy; 2026 ShopNest. All Rights Reserved.</p>
     </footer>
 
+    <!-- Load Cart JavaScript Module -->
+    <script type="module" src="js/cart.js"></script>
 </body>
-
 </html>

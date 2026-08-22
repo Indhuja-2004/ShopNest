@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Successful - ShopNest</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/order-success.css">
+</head>
+<body class="success-page">
+
+    <main class="success-main">
+        <div class="success-container">
+            <div class="success-header">
+                <div class="success-icon">
+                    <svg viewBox="0 0 24 24" width="48" height="48">
+                        <circle cx="12" cy="12" r="12" fill="#22c55e"/>
+                        <path d="M7 13l3 3 7-7" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <h1>Order Confirmed!</h1>
+                <p>Hello, your order has been confirmed and will be shipped in the next <strong>5 days</strong>.</p>
+            </div>
+
+            <div class="success-details-wrapper">
+                <!-- Product Details will be injected here -->
+                <div class="success-products" id="success-products-container">
+                    <!-- Products -->
+                </div>
+
+                <!-- Order Totals -->
+                <div class="success-totals" id="success-totals-container">
+                    <!-- Totals -->
+                </div>
+            </div>
+
+            <div class="success-meta">
+                <div class="meta-block">
+                    <small>Payment Method</small>
+                    <strong id="success-payment-method">Credit Card</strong>
+                </div>
+                <div class="meta-block">
+                    <small>Order Number</small>
+                    <strong id="success-order-number">GR36237</strong>
+                </div>
+                <div class="meta-block">
+                    <small>Ship To</small>
+                    <strong id="success-address">123, Anywhere Ave<br>Richmond OG 1234</strong>
+                </div>
+                <div class="meta-block">
+                    <small>Estimated Arrival</small>
+                    <strong id="success-arrival">April 07th, 2026</strong>
+                </div>
+            </div>
+
+            <div class="success-actions">
+                <button class="download-receipt-btn">
+                    <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px;">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="7 10 12 15 17 10"></polyline>
+                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                    </svg>
+                    Download PDF Receipt
+                </button>
+                <a href="products.html" class="continue-btn">Continue Shopping</a>
+            </div>
+        </div>
+    </main>
+
+    <script type="module" src="js/order-success.js"></script>
+</body>
+</html>

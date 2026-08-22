@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ShopNest - Calculators">
+    <title>Calculator - ShopNest</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/calculator.css">
+</head>
+<body>
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+    <header>
+        <nav>
+            <a href="index.html" class="logo">ShopNest</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Shop</a></li>
+                <li><a href="calculator.html">Calculator</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="login.html">Login</a>
+                <a href="signup.html" class="signup-btn">Sign Up</a>
+                <a href="cart.html">🛒</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- =========================
+         MAIN
+    ========================== -->
+    <main class="calculator-container">
+
+        <!-- STANDARD CALCULATOR -->
+        <section class="calc-section">
+            <h2>Standard Calculator</h2>
+            <div class="calc-body">
+                <input type="text" id="calc-display" readonly value="0">
+                <div class="calc-keys">
+                    <!-- Data-action tells our JS what the button does -->
+                    <button class="calc-btn clear" data-action="clear">C</button>
+                    <button class="calc-btn operator" data-action="delete">DEL</button>
+                    <button class="calc-btn operator" data-action="operator" data-val="%">%</button>
+                    <button class="calc-btn operator" data-action="operator" data-val="/">/</button>
+                    
+                    <button class="calc-btn num" data-val="7">7</button>
+                    <button class="calc-btn num" data-val="8">8</button>
+                    <button class="calc-btn num" data-val="9">9</button>
+                    <button class="calc-btn operator" data-action="operator" data-val="*">×</button>
+                    
+                    <button class="calc-btn num" data-val="4">4</button>
+                    <button class="calc-btn num" data-val="5">5</button>
+                    <button class="calc-btn num" data-val="6">6</button>
+                    <button class="calc-btn operator" data-action="operator" data-val="-">-</button>
+                    
+                    <button class="calc-btn num" data-val="1">1</button>
+                    <button class="calc-btn num" data-val="2">2</button>
+                    <button class="calc-btn num" data-val="3">3</button>
+                    <button class="calc-btn operator" data-action="operator" data-val="+">+</button>
+                    
+                    <button class="calc-btn num" data-val="0">0</button>
+                    <button class="calc-btn num" data-val=".">.</button>
+                    <button class="calc-btn equal" data-action="calculate">=</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SHOPPING CALCULATOR -->
+        <section class="calc-section">
+            <h2>Shopping Calculator</h2>
+            <div class="shopping-calc-body">
+                
+                <div class="shop-form-group">
+                    <label for="shop-price">Product Price (₹)</label>
+                    <input type="number" id="shop-price" placeholder="e.g. 1500" min="0">
+                    <span class="error-msg" id="err-price">Please enter a valid positive price.</span>
+                </div>
+
+                <div class="shop-form-group">
+                    <label for="shop-qty">Quantity</label>
+                    <input type="number" id="shop-qty" placeholder="e.g. 2" min="1" value="1">
+                    <span class="error-msg" id="err-qty">Please enter a valid quantity (1 or more).</span>
+                </div>
+
+                <div class="shop-form-group">
+                    <label for="shop-discount">Discount (%)</label>
+                    <input type="number" id="shop-discount" placeholder="e.g. 10" min="0" max="100">
+                    <span class="error-msg" id="err-discount">Discount must be between 0 and 100.</span>
+                </div>
+
+                <div class="shop-form-group">
+                    <label for="shop-tax">Tax (%)</label>
+                    <input type="number" id="shop-tax" placeholder="e.g. 18" min="0">
+                    <span class="error-msg" id="err-tax">Tax percentage cannot be negative.</span>
+                </div>
+
+                <button class="shop-calc-btn" id="calculate-shopping-btn">Calculate Final Amount</button>
+
+                <div class="shop-result" id="shopping-result-box">
+                    <h3>Calculation Summary</h3>
+                    <p><span>Subtotal:</span> <strong id="res-subtotal">₹0.00</strong></p>
+                    <p><span>Discount:</span> <strong id="res-discount">- ₹0.00</strong></p>
+                    <p><span>Tax:</span> <strong id="res-tax">+ ₹0.00</strong></p>
+                    <p class="final-total"><span>Final Total:</span> <strong id="res-total">₹0.00</strong></p>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+    <footer>
+        <p>&copy; 2026 ShopNest. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Load JavaScript Modules -->
+    <script type="module" src="js/calculator.js"></script>
+
+</body>
+</html>

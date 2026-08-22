@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - ShopNest</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="checkout-page">
+
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="index.html" class="logo">ShopNest</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Shop</a></li>
+                <li><a href="calculator.html">Categories</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="login.html">Login</a>
+                <a href="signup.html" class="signup-btn">Sign Up</a>
+                <a href="cart.html" aria-label="Shopping Cart">🛒</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="checkout-main">
+        <div class="checkout-container">
+            
+            <div class="checkout-breadcrumbs">
+                <span>Home</span> > <span>Cart</span> > <span>Shipping Details</span> > <strong>Payment Details</strong>
+            </div>
+
+            <h1 class="checkout-title">Payment Details</h1>
+
+            <div class="checkout-layout">
+                
+                <!-- Left Column -->
+                <div class="checkout-left">
+                    
+                    <section class="checkout-section">
+                        <h2>Select payment method</h2>
+                        <div class="payment-methods">
+                            <label class="payment-option selected">
+                                <input type="radio" name="payment_method" value="credit_card" checked>
+                                <span>Credit card</span>
+                            </label>
+                            <label class="payment-option">
+                                <input type="radio" name="payment_method" value="paypal">
+                                <span>Paypal</span>
+                            </label>
+                            <label class="payment-option">
+                                <input type="radio" name="payment_method" value="neteller">
+                                <span>Neteller</span>
+                            </label>
+                            <label class="payment-option">
+                                <input type="radio" name="payment_method" value="others">
+                                <span>Others</span>
+                            </label>
+                        </div>
+
+                        <div class="card-details-form">
+                            <div class="form-row">
+                                <input type="text" placeholder="Card number">
+                                <input type="text" placeholder="Name on card">
+                            </div>
+                            <div class="form-row">
+                                <input type="text" placeholder="Expiration date (MM/YY)">
+                                <input type="text" placeholder="CVV Number">
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="checkout-section">
+                        <h2>Billing Address</h2>
+                        <label class="checkbox-label">
+                            <input type="checkbox" checked>
+                            Same as my shipping address
+                        </label>
+
+                        <div class="billing-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>First Name*</label>
+                                    <input type="text" placeholder="Enter your first name">
+                                </div>
+                                <div class="form-group">
+                                    <label>Last Name*</label>
+                                    <input type="text" placeholder="Enter your last name">
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Phone Number*</label>
+                                    <input type="tel" placeholder="Enter your phone number">
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Email Address*</label>
+                                    <input type="email" placeholder="Enter your email address">
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Street name and house number*</label>
+                                    <input type="text" placeholder="Enter your street name and house number">
+                                </div>
+                            </div>
+
+                            <div class="form-row three-cols">
+                                <div class="form-group">
+                                    <label>City*</label>
+                                    <select>
+                                        <option>Select City</option>
+                                        <option>New York</option>
+                                        <option>London</option>
+                                        <option>Mumbai</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Region*</label>
+                                    <select>
+                                        <option>Select region</option>
+                                        <option>NY</option>
+                                        <option>ENG</option>
+                                        <option>MH</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-row half-col">
+                                <div class="form-group">
+                                    <label>Postal Code*</label>
+                                    <input type="text" placeholder="Enter your postal code">
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                </div>
+
+                <!-- Right Column -->
+                <div class="checkout-right">
+                    
+                    <section class="checkout-order-summary">
+                        <h2>Your Order</h2>
+                        <div class="order-items" id="checkout-items">
+                            <!-- Checkout items will be injected here by checkout.js -->
+                        </div>
+                    </section>
+
+                    <section class="checkout-discount">
+                        <h2>Discount Code</h2>
+                        <div class="discount-input">
+                            <input type="text" placeholder="Add Discount Code">
+                            <button class="apply-btn">Apply</button>
+                        </div>
+                        <p class="new-customer-promo">New Customer? <a href="signup.html">Sign Up to get better offer</a></p>
+                    </section>
+
+                    <section class="checkout-totals">
+                        <h2>Payment details</h2>
+                        <div class="total-row">
+                            <span>Subtotal</span>
+                            <strong id="checkout-subtotal">₹0.00</strong>
+                        </div>
+                        <div class="total-row">
+                            <span>Tax (18%)</span>
+                            <strong id="checkout-tax">₹0.00</strong>
+                        </div>
+                        <div class="total-row">
+                            <span>Discount</span>
+                            <strong id="checkout-discount" style="color: #e53935;">-₹0.00</strong>
+                        </div>
+                        <div class="total-row">
+                            <span>Shipment cost</span>
+                            <strong id="checkout-delivery">₹0.00</strong>
+                        </div>
+                        <hr>
+                        <div class="total-row grand-total">
+                            <span>Grand total</span>
+                            <strong id="checkout-total">₹0.00</strong>
+                        </div>
+                        <button class="checkout-submit-btn">Continue to payment</button>
+                    </section>
+
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 ShopNest. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Load Checkout JavaScript Module -->
+    <script type="module" src="js/checkout.js"></script>
+</body>
+</html>
